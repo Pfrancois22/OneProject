@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <div className='container mx-auto bg-slate-400 p-3 flex flex-col justify-start'>
     <App />
-  </React.StrictMode>,
+  </div>,
 )
