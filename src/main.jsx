@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='container mx-auto bg-slate-400 p-3 flex flex-col justify-start'>
+  <div className='bg-slate-500 flex justify-center px-16 py-2'>
     <App />
   </div>,
 )

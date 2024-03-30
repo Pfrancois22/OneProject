@@ -6,7 +6,12 @@ export default {
       colors: {
         'blue-degrader-1': '#01a6b0',
         'blue-degrader-2': '#dcf9ff',
-      }
+        'blanc-fond-container': '#ECF1FB',
+      },
+      backgroundImage: {
+        'fond-header': "url('./assets/images/fond_header1.png')",
+      },
+    
     },
   },
   plugins: [],
