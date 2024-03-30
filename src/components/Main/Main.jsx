@@ -1,34 +1,28 @@
-
-// import React from 'react'
-
-import Article from "../Articles/Articles";
+import Articles from "../Articles/Articles";
 import RechercheVille from "../Formulaires/RechercheVille";
-
-// function Main() {
-//   return (
-//     <main className='flex grow flex-col'>
-//         <h2>Title article</h2>
-//         <article>
-//             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam soluta dolor excepturi dignissimos unde sunt?</p>
-//         </article>
-//     </main>
-//   )
-// }
-
-// export default Main
-
+import ApiVilleGouv from "../../utils/ApiVilleGouv";
+import { useState } from "react";
 
 function Main() {
-    return (
-      <main className="container mx-auto flex-grow">
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <RechercheVille />
-        <Article />
-    
+  const { repos, isLoading, getRepos } = ApiVilleGouv();
+  const [villeNom, setVilleNom] = useState("");
+
+  const handleVilleNomChange = (nom) => {
+    setVilleNom(nom);
+  };
+
+  return (
+    <main className="container mx-auto flex-grow">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <RechercheVille
+          getRepos={getRepos}
+          isLoading={isLoading}
+          onVilleNomChange={handleVilleNomChange}
+        />
+        <Articles repos={repos} villeNom={villeNom} />
       </div>
-       
-      </main>
-    )
-  }
-  
-  export default Main;
+    </main>
+  );
+}
+
+export default Main;

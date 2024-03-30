@@ -1,10 +1,11 @@
+import ListesVille from "../Listes/ListesVille";
 import Titre_h2 from "../Titre/Titre_h2";
 
-function Article() {
+function Article({ repos, villeNom }) {
     return (
       <article className="bg-slate-100">
-        <Titre_h2 />
-          <p>Contenu de l'article...</p>
+        <Titre_h2 cilleNom={villeNom} />
+        <ListesVille repos={repos} />
       </article>
     );
   }

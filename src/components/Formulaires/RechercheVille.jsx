@@ -1,11 +1,11 @@
 import { useState } from "react";
 
+function RechercheVille({ getRepos, isLoading }) {
+  const [villeNom, setVilleNom] = useState("");
 
-
-function RechercheVille() {
   const clicRecherche = (event) => {
     event.preventDefault();
-    const villeNom = event.target.villeNom.value;
+    // const villeNom = event.target.villeNom.value;
     getRepos(villeNom);
   };
 
@@ -17,8 +17,16 @@ function RechercheVille() {
           <label htmlFor="villeNom">Recherche par ville</label>
         </div>
         <div className="inputRechercheVille">
-          <input type="text" id="villeNom" placeholder="Entrez le nom dela ville" />
-          <button type="submit">Lancer la recherche</button>
+          <input
+            type="text"
+            id="villeNom"
+            placeholder="Entrez le nom de la ville"
+            onChange={(e) => setVilleNom(e.target.value)}
+          />
+          {/* <button type="submit">Lancer la recherche</button> */}
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Chargement..." : "Lancer la recherche"}
+          </button>
         </div>
       </form>
     </>
