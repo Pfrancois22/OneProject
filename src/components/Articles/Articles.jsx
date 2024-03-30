@@ -3,8 +3,8 @@ import Titre_h2 from "../Titre/Titre_h2";
 
 function Article({ repos, villeNom }) {
     return (
-      <article className="bg-slate-100">
-        <Titre_h2 cilleNom={villeNom} />
+      <article className="bg-slate-100 ">
+        <Titre_h2 villeNom={villeNom} />
         <ListesVille repos={repos} />
       </article>
     );
